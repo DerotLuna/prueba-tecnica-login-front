@@ -1,0 +1,31 @@
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sidenav-container {
+  height: 100%;
+  margin: 0;
+}
+
+.sidenav {
+  width: 15%;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+mat-icon {
+  display:flex;
+  align-self:center;
+}

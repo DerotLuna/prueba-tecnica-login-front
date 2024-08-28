@@ -1,0 +1,61 @@
+<!-- Toolbar -->
+<mat-toolbar color="primary"
+             class="toolbar"
+>
+  <!-- Menu button -->
+  <button mat-icon-button
+          matTooltip="Menu"
+          (click)="sidenav.toggle()"
+  >
+    @if (sidenav.opened) {
+      <mat-icon>menu_open</mat-icon>
+    } @else {
+      <mat-icon>menu</mat-icon>
+    }
+  </button>
+  <!-- Logout button -->
+  <button mat-icon-button
+          matTooltip="Cerrar sesión"
+          (click)="signOut()"
+  >
+    <mat-icon>logout</mat-icon>
+  </button>
+</mat-toolbar>
+
+<!-- Container for the sidenav -->
+<mat-sidenav-container class="sidenav-container">
+  <!-- Sidenav -->
+  <mat-sidenav #sidenav mode="side" class="sidenav">
+    <ng-container *ngTemplateOutlet="menu"></ng-container>
+  </mat-sidenav>
+  <!-- Content -->
+  <mat-sidenav-content>
+    <div class="sidenav-content">
+      <router-outlet/>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<!-- Template for the menu -->
+<ng-template #menu>
+  <mat-nav-list>
+    <!-- Dashboard -->
+    <mat-list-item routerLink="dashboard">
+      <div class="list-item">
+        <mat-icon>dashboard_customize</mat-icon>
+        <p>
+          Dashboard
+        </p>
+      </div>
+    </mat-list-item>
+    <!-- Participation -->
+    <mat-list-item routerLink="participation">
+      <div class="list-item">
+        <mat-icon>people</mat-icon>
+        <p>
+          Participation
+        </p>
+      </div>
+    </mat-list-item>
+  </mat-nav-list>
+</ng-template>

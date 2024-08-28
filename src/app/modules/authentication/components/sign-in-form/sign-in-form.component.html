@@ -1,0 +1,57 @@
+<!-- Header -->
+<div class="container">
+  <!-- Logo -->
+  <picture>
+    <img ngSrc="assets/images/logo/black-logo.png" alt="logo" height="145" width="512">
+  </picture>
+  <!-- Title -->
+  <section>
+    <h2>¡Bienvenido!</h2>
+  </section>
+  <!-- Form -->
+  <form class="form-container"
+        [formGroup]="form"
+        (ngSubmit)="submit()"
+  >
+    <!-- Email -->
+    <mat-form-field>
+      <!-- Label -->
+      <mat-label>Correo</mat-label>
+      <!-- Input -->
+      <input matInput formControlName="email" type="email">
+      <!-- Icon -->
+      <mat-icon matPrefix>
+        alternate_email
+      </mat-icon>
+      <!-- Error -->
+      <mat-error>
+        {{ getErrorMessageByField('email') }}
+      </mat-error>
+    </mat-form-field>
+    <!-- Last name -->
+    <mat-form-field>
+      <!-- Label -->
+      <mat-label>Contraseña</mat-label>
+      <!-- Input -->
+      <input matInput formControlName="password" type="password">
+      <!-- Icon -->
+      <mat-icon matPrefix>
+        password
+      </mat-icon>
+      <!-- Error -->
+      <mat-error>
+        {{ getErrorMessageByField('password') }}
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Submit button -->
+    <button mat-raised-button
+            color="primary"
+            type="submit"
+    >
+      Ingresar
+    </button>
+  </form>
+</div>
+
+

@@ -1,0 +1,66 @@
+<!-- Header -->
+<div class="container">
+  <h2>¡Participa y gana!</h2>
+</div>
+
+<!-- Form -->
+<form class="form-container"
+      [formGroup]="form"
+      (ngSubmit)="submit()"
+>
+  <!-- Name -->
+  <mat-form-field>
+    <!-- Label -->
+    <mat-label>Nombre</mat-label>
+    <!-- Input -->
+    <input matInput formControlName="name">
+    <!-- Icon -->
+    <mat-icon matPrefix>
+      person
+    </mat-icon>
+    <!-- Error -->
+    <mat-error>
+      {{ getErrorMessageByField('name') }}
+    </mat-error>
+  </mat-form-field>
+  <!-- Last name -->
+  <mat-form-field>
+    <!-- Label -->
+    <mat-label>Apellido</mat-label>
+    <!-- Input -->
+    <input matInput formControlName="last_name">
+    <!-- Icon -->
+    <mat-icon matPrefix>
+      person
+    </mat-icon>
+    <!-- Error -->
+    <mat-error>
+      {{ getErrorMessageByField('last_name') }}
+    </mat-error>
+  </mat-form-field>
+  <!-- Phone -->
+  <mat-form-field>
+    <!-- Label -->
+    <mat-label>Teléfono</mat-label>
+    <!-- Input -->
+    <input matInput formControlName="phone"
+           type="number"
+    >
+    <!-- Icon -->
+    <mat-icon matPrefix>
+      phone
+    </mat-icon>
+    <!-- Error -->
+    <mat-error>
+      {{ getErrorMessageByField('phone') }}
+    </mat-error>
+  </mat-form-field>
+
+  <!-- Submit button -->
+  <button mat-raised-button
+          color="primary"
+          type="submit"
+  >
+    Enviar
+  </button>
+</form>
